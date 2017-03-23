@@ -21,7 +21,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/src/",
+    path: __dirname +"/src/",
     filename: "bundle.js"
   },
   plugins: debug ? [] : [
