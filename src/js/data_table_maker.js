@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {Col,Row,Grid,Button} from 'react-bootstrap';
 
 
 export default class Tablemaker extends React.Component{
@@ -9,7 +10,6 @@ export default class Tablemaker extends React.Component{
   {
     super();
     this.state={
-        elements:[]
     }
     this.table=this.table.bind(this);
 
@@ -17,45 +17,37 @@ export default class Tablemaker extends React.Component{
 
 
 
-  componentDidMount() {
-    let productsdata = this.props.data;
-    this.table(productsdata,4);
-
-   }
-
-
-
 
   table(data,col){
-  let bootsize=  "col-md-"+ Math.floor(12/col) + " item";
+  let bootsize=  Math.floor(12/col);
   let items=[];
   let elements=[];
   data.map(
   (item,index)=>{
   items.push(
 
-  <div key={"item"+item.id} class={bootsize} >
-
+<Col  md={bootsize} key={"item"+item.id} className="item">
 
    <h1>{item.name}</h1>
    <p>{item.price}</p>
   <img src={item.image}/>
+  <div>
+    <button class="buybutton" onClick={()=> this.props.buy(item)}>buy</button>
 <button class="itembutton" onClick={()=> this.props.openmodal(item)}>edit</button>
-
-
-  </div>
+</div>
+</Col>
 
 );
 
 if( (index+1) % col == 0){
 
-elements.push(<div class="row" key={"row"+(index/col)}>{items}</div>);
+elements.push( <Row  key={"row"+(index/col)} > {items}</Row>);
 items=[];
  }
 
   });
 
-  this.setState({elements:elements});
+  return (elements);
   }
 
 
@@ -66,14 +58,18 @@ items=[];
 
 
 render(){
+  const productsdata = this.props.data;
+  const table = this.table(productsdata,4);
+
   return(
     <div>
     <h1>product table</h1>
 
 
-         <div id= "product_list_container" class="container">
-         {this.state.elements}
-         </div>
+          <Grid>
+         {table}
+       </Grid>
+
 
     </div>
 
