@@ -9,3 +9,41 @@ border :  black solid 1px;
 .buybutton {
   float:right;
 }
+
+#shoppinglist{
+  width:150px;
+  height:40px;
+  color: white;
+  margin-top:  20px;
+  margin-left: 10px;
+  background-color: #4db564;
+}
+
+#shoppinglisttext{
+padding-left: 10px;
+padding-top:  10px;
+
+}
+
+
+#productcontainer{
+  margin-top: 10px;
+  width:900px;
+  float:left;
+}
+
+#searchbox{
+  margin-top: 100px;
+  margin-left: 1000px;
+  position: absolute;;
+}
+
+.list-group{
+  color:red;
+  width:300px;
+}
+
+#searchinput{
+margin-left: 80px;
+margin-bottom: 20px;
+}

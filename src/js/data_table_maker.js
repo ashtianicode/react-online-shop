@@ -62,11 +62,12 @@ render(){
   const table = this.table(productsdata,4);
 
   return(
-    <div>
-    <h1>product table</h1>
+    <div >
 
 
-          <Grid>
+
+          <Grid id="productcontainer">
+                <h1>product table</h1>
          {table}
        </Grid>
 
