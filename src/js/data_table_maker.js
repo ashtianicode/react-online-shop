@@ -22,6 +22,8 @@ export default class Tablemaker extends React.Component{
   let bootsize=  Math.floor(12/col);
   let items=[];
   let elements=[];
+  const length = data.length;
+  console.log(length);
   data.map(
   (item,index)=>{
   items.push(
@@ -38,6 +40,11 @@ export default class Tablemaker extends React.Component{
 </Col>
 
 );
+
+if(length == index+1){
+  console.log("index",index);
+  elements.push( <Row  key={"row"+(index/col)} > {items}</Row>);
+}
 
 if( (index+1) % col == 0){
 
