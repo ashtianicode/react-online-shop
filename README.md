@@ -1,4 +1,3 @@
-http://reactshop.tk/
-
-in this project i am going to build an online shop in the form of a single page application .
-the shop is going to have very intresting functionalities which i will find in the process of investigating best online shops ever on the web.
+# React Online Shop
+This was my first project playing around with react couple of years ago,
+I was trying to build an online shop with React.js
